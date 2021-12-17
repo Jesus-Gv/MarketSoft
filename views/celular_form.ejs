@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>POS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <%- include('layout/menu'); %>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>FORM EQUIPO</h3>
+            </div>
+            <div class="card-body">
+                <form action="/celular/save" method="post">
+                    <div class="form-group">
+                        <label for="txtIdCelular">IDCELULAR</label>
+                        <input type="text" class="form-control"
+                            id="txtIdCelular"
+                            name="idCelular"
+                            value="<%= celularForm.idCelular %>"
+                            readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDescripcion">DESCRIPCION</label>
+                        <input type="txt" class="form-control"
+                            id="txtDescripcion"
+                            name="descripcion"
+                            value="<%= celularForm.descripcion %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPrecio">PRECIO</label>
+                        <input type="text" class="form-control"
+                            id="txtPrecio"
+                            name="precio"
+                            value="<%= celularForm.precio %>">
+                    </div>
+                    <input type="submit" class="btn btn-success" value="GUARDAR">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

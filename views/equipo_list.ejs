@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MARKETSOFT</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <%- include('layout/menu'); %>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center">LISTA DE EQUIPOS</div>
+            <div class="card-body">
+                <a class="btn btn-success" href="/equipo/form/0" >NUEVO</a>
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>IDPRODUCTO</th>
+                        <th>DESCRIPCION</th>
+                        <th>PRECIO</th>
+                       <!--  <th>IMAGEN</th> -->
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <% if(dataEquipos.length){ %>
+                                <% dataEquipos.forEach( item => {%>
+                                    <tr>
+                                        <td><%= item.idEquipo %></td>
+                                        <td><%= item.descripcion  %></td>
+                                        <td><%= item.precio  %></td>
+<!--                                         <td><img src="" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> </td> -->
+                                    </tr>
+                                <% })%>
+                            <% } %>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+          </div>
+    </div>
+</body>
+</html>
